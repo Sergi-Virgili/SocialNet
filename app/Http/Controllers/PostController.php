@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PostCollection;
 use App\Post;
 use App\Services\Posts\CreatePostService;
 use App\Usecases\Posts\ICreatePost;
@@ -11,7 +12,11 @@ use App\Http\Resources\Post as PostResource;
 class PostController extends Controller
 {
 
+    public function index()
+    {
 
+        return new PostCollection(request()->user()->posts);
+    }
 
     public function store()
     {
@@ -25,5 +30,7 @@ class PostController extends Controller
 
         return new PostResource($post);
     }
+
+
 }
 

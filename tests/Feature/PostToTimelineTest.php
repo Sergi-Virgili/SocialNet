@@ -19,7 +19,7 @@ class PostToTimelineTest extends TestCase
 
     public function test_a_user_can_post_a_text_post()
     {
-        $this->withoutExceptionHandling();
+
         $user = factory(User::class)->create();
         $this->actingAs($user, 'api');
         $response = $this->post('/api/posts', [
