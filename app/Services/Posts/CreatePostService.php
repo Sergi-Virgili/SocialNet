@@ -1,15 +1,14 @@
 <?php
 
 
-namespace App\Usecases\Posts;
+namespace App\Services\Posts;
 
 
 use App\Post;
 
-class CreatePost
+class CreatePostService
 {
     private $data;
-
     private $user;
 
     public function __construct($user, $data) {
