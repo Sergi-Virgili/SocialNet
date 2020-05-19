@@ -14,7 +14,6 @@ class PostController extends Controller
 
     public function index()
     {
-
         return new PostCollection(request()->user()->posts);
     }
 
@@ -30,7 +29,6 @@ class PostController extends Controller
 
         return new PostResource($post);
     }
-
 
 }
 
