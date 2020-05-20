@@ -1,43 +1,41 @@
 <template>
-    <div class="flex flex-col items-center py-4">
+  <div class="flex flex-col items-center py-4">
+    <NewPost />
 
-
-        <NewPost />
-
-        <Post />
-    </div>
+    <Post v-for="post in posts.data" :key="post.data.post_id" :post="post" />
+  </div>
 </template>
 
 <script>
-    import NewPost from '../components/NewPost';
-    import Post from '../components/Post';
+import NewPost from "../components/NewPost";
+import Post from "../components/Post";
 
-    export default {
-        name: "NewsFeed",
+export default {
+  name: "NewsFeed",
 
-        components: {
-            NewPost,
-            Post,
-        },
+  components: {
+    NewPost,
+    Post
+  },
 
-        data: () => {
-            return {
-                posts: null
-            }
-        },
+  data: () => {
+    return {
+      posts: null
+    };
+  },
 
-        mounted() {
-            axios.get('api/posts')
-                .then(res => {
-                    this.posts = res.data;
-                })
-                .catch(error => {
-                    console.log(error);
-                });
-        }
-    }
+  mounted() {
+    axios
+      .get("api/posts")
+      .then(res => {
+        this.posts = res.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+};
 </script>
 
 <style scoped>
-
 </style>
