@@ -17,9 +17,8 @@
         <p class="text-2xl text-gray-100 ml-4">{{user.data.attributes.name}}</p>
       </div>
     </div>
-    <div v-if="!postLoading">
-      <Post v-for="post in posts.data" :key="post.data.post_id" :post="post" />
-    </div>
+    <p v-if="postLoading">Loading Posts..</p>
+    <Post v-else v-for="post in posts.data" :key="post.data.post_id" :post="post" />
   </section>
 </template>
 
