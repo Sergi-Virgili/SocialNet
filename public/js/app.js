@@ -2204,6 +2204,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Show",
@@ -20472,7 +20473,11 @@ var render = function() {
         ? _c("p", [_vm._v("Loading Posts..")])
         : _vm._l(_vm.posts.data, function(post) {
             return _c("Post", { key: post.data.post_id, attrs: { post: post } })
-          })
+          }),
+      _vm._v(" "),
+      !_vm.postLoading || _vm.posts.data.lenght < 1
+        ? _c("p", [_vm._v("No posts found. Get started...")])
+        : _vm._e()
     ],
     2
   )
