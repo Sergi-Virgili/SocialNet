@@ -19,7 +19,7 @@
     </div>
     <p v-if="postLoading">Loading Posts..</p>
     <Post v-else v-for="post in posts.data" :key="post.data.post_id" :post="post" />
-    <p v-if="! postLoading || posts.data.lenght < 1">No posts found. Get started...</p>
+    <p v-if="!postLoading && posts.data.lenght < 1">No posts found. Get started...</p>
   </section>
 </template>
 

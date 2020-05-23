@@ -1980,8 +1980,60 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Nav"
+  name: "Nav",
+  data: function data() {
+    return {
+      user: null
+    };
+  },
+  mounted: function mounted() {
+    this.getAuthUser();
+  },
+  methods: {
+    getAuthUser: function getAuthUser() {
+      var _this = this;
+
+      axios.get("/api/auth-user").then(function (res) {
+        _this.user = res.data;
+      })["catch"](function (err) {
+        return console.log("unable to fetch the useer");
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -19974,7 +20026,7 @@ var render = function() {
             "router-link",
             {
               staticClass:
-                "px-6 border-b-2 border-blue-500 h-full flex items-center ",
+                "px-6 border-b-2 border-blue-500 h-full flex items-center",
               attrs: { to: "/" }
             },
             [
@@ -20003,8 +20055,8 @@ var render = function() {
             "router-link",
             {
               staticClass:
-                "px-6 border-b-2 border-white h-full flex items-center ",
-              attrs: { to: "/" }
+                "px-6 border-b-2 border-white h-full flex items-center",
+              attrs: { to: "/users/" + _vm.user.data.user_id }
             },
             [
               _c("img", {
@@ -20022,7 +20074,7 @@ var render = function() {
             "router-link",
             {
               staticClass:
-                "px-6 border-b-2 border-white h-full flex items-center ",
+                "px-6 border-b-2 border-white h-full flex items-center",
               attrs: { to: "/" }
             },
             [
@@ -20475,7 +20527,7 @@ var render = function() {
             return _c("Post", { key: post.data.post_id, attrs: { post: post } })
           }),
       _vm._v(" "),
-      !_vm.postLoading || _vm.posts.data.lenght < 1
+      !_vm.postLoading && _vm.posts.data.lenght < 1
         ? _c("p", [_vm._v("No posts found. Get started...")])
         : _vm._e()
     ],
@@ -35532,27 +35584,7 @@ if (false) {} else {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Applications/MAMP/htdocs/fclone/fclone/node_modules/webpack/buildin/global.js'");
 
 /***/ }),
 
@@ -35563,29 +35595,7 @@ module.exports = g;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = function(module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Applications/MAMP/htdocs/fclone/fclone/node_modules/webpack/buildin/module.js'");
 
 /***/ }),
 
